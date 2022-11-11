@@ -11,7 +11,7 @@ let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth : {
         user: "manu.bhadoria@gmail.com",
-        pass: "ybijhycbpazdxark"
+        pass: ""
     },
     tls: {
         rejectUnauthorized: false
@@ -35,7 +35,7 @@ module.exports.register = async (req,res) => {
             from: 'Verify your email <manu.bhadoria@gmail.com>',
             to: user.email,
             subject: "Please sign up",
-            html: `<h1>Email Verify Kar Behenchod </h1>
+            html: `<h1>Email Verify </h1>
                     <a href = "http://${req.headers.host}/verify-email?token=${user._id}"> Click Here!</a>`
         }
         console.log(req.headers.host);
